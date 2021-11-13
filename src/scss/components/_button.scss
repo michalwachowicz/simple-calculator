@@ -1,5 +1,4 @@
 @use '../abstracts/variables' as *;
-@use '../abstracts/mixins' as *;
 
 .btns-container {
   display: grid;
@@ -26,7 +25,7 @@
   background: none;
   border: none;
   border-radius: 9999px;
-  transition: all 0.5s ease;
+  transition: all 0.2s ease;
   font-family: $font-stack;
   cursor: pointer;
 
@@ -38,7 +37,7 @@
   &--special {
     background-color: $light-gray;
 
-    @include active {
+    &--active {
       background-color: lighten($light-gray, 20%);
     }
   }
@@ -61,7 +60,7 @@
     background-color: $dark-gray;
     color: #fff;
 
-    @include active {
+    &--active {
       background-color: lighten($dark-gray, 20%);
     }
   }

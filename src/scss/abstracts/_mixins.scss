@@ -1,6 +1,0 @@
-@mixin active {
-  &:active,
-  &--active {
-    @content;
-  }
-}

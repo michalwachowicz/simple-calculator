@@ -37,8 +37,9 @@ body {
 .display {
   padding: 0.5rem 0.25rem;
   overflow: hidden;
-  font-size: 4.5rem;
+  font-size: 3.8rem;
   font-weight: 300;
+  letter-spacing: -0.2rem;
   text-align: right;
   white-space: nowrap;
 }
@@ -67,7 +68,7 @@ body {
   background: none;
   border: none;
   border-radius: 9999px;
-  transition: all 0.5s ease;
+  transition: all 0.2s ease;
   font-family: "Inter", sans-serif;
   cursor: pointer;
 }
@@ -78,7 +79,7 @@ body {
 .btn--special {
   background-color: #ced4da;
 }
-.btn--special:active, .btn--special--active {
+.btn--special--active {
   background-color: white;
 }
 .btn--operator {
@@ -96,7 +97,7 @@ body {
   background-color: #343a40;
   color: #fff;
 }
-.btn--symbol:active, .btn--symbol--active {
+.btn--symbol--active {
   background-color: #626d78;
 }
 .btn--wide {
