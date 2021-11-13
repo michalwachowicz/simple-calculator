@@ -1,0 +1,79 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.btns-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: repeat(5, 1fr);
+  -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+
+  &:before {
+    content: '';
+    width: 0;
+    padding-top: 100%;
+    grid-row: 1 / 1;
+    grid-column: 1 / 1;
+  }
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: none;
+  border: none;
+  border-radius: 9999px;
+  transition: all 0.5s ease;
+  font-family: $font-stack;
+  cursor: pointer;
+
+  &:first-child {
+    grid-row: 1 / 1;
+    grid-column: 1 / 1;
+  }
+
+  &--special {
+    background-color: $light-gray;
+
+    @include active {
+      background-color: lighten($light-gray, 20%);
+    }
+  }
+
+  &--operator {
+    background-color: $orange;
+    color: #fff;
+
+    &:active {
+      background-color: lighten($orange, 10%);
+    }
+
+    &--active {
+      background-color: #fff;
+      color: $orange;
+    }
+  }
+
+  &--symbol {
+    background-color: $dark-gray;
+    color: #fff;
+
+    @include active {
+      background-color: lighten($dark-gray, 20%);
+    }
+  }
+
+  &--wide {
+    grid-column: span 2;
+    justify-content: flex-start;
+    padding-left: 1.6rem;
+  }
+
+  &__text {
+    font-size: 2rem;
+    font-weight: 400;
+  }
+}

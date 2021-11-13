@@ -1,3 +1,112 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+}
+
+.container {
+  width: 22rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+@media (max-width: 22rem) {
+  .container {
+    width: 100%;
+  }
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  width: 100%;
+}
+
+.display {
+  padding: 0.5rem 0.25rem;
+  overflow: hidden;
+  font-size: 4.5rem;
+  font-weight: 300;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.btns-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: repeat(5, 1fr);
+  -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+}
+.btns-container:before {
+  content: "";
+  width: 0;
+  padding-top: 100%;
+  grid-row: 1/1;
+  grid-column: 1/1;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: none;
+  border: none;
+  border-radius: 9999px;
+  transition: all 0.5s ease;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+}
+.btn:first-child {
+  grid-row: 1/1;
+  grid-column: 1/1;
+}
+.btn--special {
+  background-color: #ced4da;
+}
+.btn--special:active, .btn--special--active {
+  background-color: white;
+}
+.btn--operator {
+  background-color: #ff922b;
+  color: #fff;
+}
+.btn--operator:active {
+  background-color: #ffac5e;
+}
+.btn--operator--active {
+  background-color: #fff;
+  color: #ff922b;
+}
+.btn--symbol {
+  background-color: #343a40;
+  color: #fff;
+}
+.btn--symbol:active, .btn--symbol--active {
+  background-color: #626d78;
+}
+.btn--wide {
+  grid-column: span 2;
+  justify-content: flex-start;
+  padding-left: 1.6rem;
+}
+.btn__text {
+  font-size: 2rem;
+  font-weight: 400;
+}
 
 /*# sourceMappingURL=main.css.map */

@@ -1,0 +1,12 @@
+@use '../abstracts/variables' as *;
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: $font-stack;
+}

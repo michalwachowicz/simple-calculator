@@ -16,81 +16,85 @@
     <title>Simple Calculator</title>
   </head>
   <body>
-    <div class="container">
-      <div class="display">0</div>
-      <div class="btns-container">
-        <button class="btn btn--special" data-key="67">
-          <span class="btn__text">C</span>
-        </button>
-        <button class="btn btn--special" data-key="8">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="btn__text"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M12 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2M3 12l6.414 6.414a2 2 0 001.414.586H19a2 2 0 002-2V7a2 2 0 00-2-2h-8.172a2 2 0 00-1.414.586L3 12z"
-            />
-          </svg>
-        </button>
-        <button class="btn btn--special">
-          <span class="btn__text">±</span>
-        </button>
-        <button class="btn btn--operator">
-          <span class="btn__text">÷</span>
-        </button>
-        <button class="btn btn--symbol" data-key="55">
-          <span class="btn__text">7</span>
-        </button>
-        <button class="btn btn--symbol" data-key="56">
-          <span class="btn__text">8</span>
-        </button>
-        <button class="btn btn--symbol" data-key="57">
-          <span class="btn__text">9</span>
-        </button>
-        <button class="btn btn--operator">
-          <span class="btn__text">×</span>
-        </button>
-        <button class="btn btn--symbol" data-key="52">
-          <span class="btn__text">4</span>
-        </button>
-        <button class="btn btn--symbol" data-key="53">
-          <span class="btn__text">5</span>
-        </button>
-        <button class="btn btn--symbol" data-key="54">
-          <span class="btn__text">6</span>
-        </button>
-        <button class="btn btn--operator">
-          <span class="btn__text">-</span>
-        </button>
-        <button class="btn btn--symbol" data-key="49">
-          <span class="btn__text">1</span>
-        </button>
-        <button class="btn btn--symbol" data-key="50">
-          <span class="btn__text">2</span>
-        </button>
-        <button class="btn btn--symbol" data-key="51">
-          <span class="btn__text">3</span>
-        </button>
-        <button class="btn btn--operator">
-          <span class="btn__text">+</span>
-        </button>
-        <button class="btn btn--symbol btn--wide" data-key="48">
-          <span class="btn__text">0</span>
-        </button>
-        <button class="btn btn--symbol" data-key="188">
-          <span class="btn__text">,</span>
-        </button>
-        <button class="btn btn--operator">
-          <span class="btn__text">=</span>
-        </button>
+    <div class="wrapper">
+      <div class="container">
+        <div class="display">0</div>
+        <div class="btns-container">
+          <button class="btn btn--special" data-key="67">
+            <span class="btn__text">C</span>
+          </button>
+          <button class="btn btn--special" data-key="8">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="btn__text"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              height="2rem"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2M3 12l6.414 6.414a2 2 0 001.414.586H19a2 2 0 002-2V7a2 2 0 00-2-2h-8.172a2 2 0 00-1.414.586L3 12z"
+              />
+            </svg>
+          </button>
+          <button class="btn btn--special">
+            <span class="btn__text">±</span>
+          </button>
+          <button class="btn btn--operator">
+            <span class="btn__text">÷</span>
+          </button>
+          <button class="btn btn--symbol" data-key="55">
+            <span class="btn__text">7</span>
+          </button>
+          <button class="btn btn--symbol" data-key="56">
+            <span class="btn__text">8</span>
+          </button>
+          <button class="btn btn--symbol" data-key="57">
+            <span class="btn__text">9</span>
+          </button>
+          <button class="btn btn--operator">
+            <span class="btn__text">×</span>
+          </button>
+          <button class="btn btn--symbol" data-key="52">
+            <span class="btn__text">4</span>
+          </button>
+          <button class="btn btn--symbol" data-key="53">
+            <span class="btn__text">5</span>
+          </button>
+          <button class="btn btn--symbol" data-key="54">
+            <span class="btn__text">6</span>
+          </button>
+          <button class="btn btn--operator">
+            <span class="btn__text">-</span>
+          </button>
+          <button class="btn btn--symbol" data-key="49">
+            <span class="btn__text">1</span>
+          </button>
+          <button class="btn btn--symbol" data-key="50">
+            <span class="btn__text">2</span>
+          </button>
+          <button class="btn btn--symbol" data-key="51">
+            <span class="btn__text">3</span>
+          </button>
+          <button class="btn btn--operator">
+            <span class="btn__text">+</span>
+          </button>
+          <button class="btn btn--symbol btn--wide" data-key="48">
+            <span class="btn__text">0</span>
+          </button>
+          <button class="btn btn--symbol" data-key="188">
+            <span class="btn__text">,</span>
+          </button>
+          <button class="btn btn--operator">
+            <span class="btn__text">=</span>
+          </button>
+        </div>
       </div>
     </div>
+
     <script src="../src/js/app.js"></script>
   </body>
 </html>
