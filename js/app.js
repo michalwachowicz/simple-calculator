@@ -84,6 +84,15 @@ function addClickAnimation(node) {
   })
 }
 
+function animateError() {
+  const container = document.querySelector('.container')
+
+  container.classList.add('container--animate')
+  setTimeout(() => {
+    container.classList.remove('container--animate')
+  }, 200)
+}
+
 operatorBtns.forEach((btn) => {
   btn.addEventListener('click', () => {
     const attr = btn.getAttribute('data-func')
@@ -93,12 +102,20 @@ operatorBtns.forEach((btn) => {
         const func = runFunc(previousNum, getCurrentNum())
         if (func != null) {
           if (func % 1 != 0 && func != 'Error!') {
-            display.textContent = (
-              Math.round((func + Number.EPSILON) * 100) / 100
-            )
+            const text = (Math.round((func + Number.EPSILON) * 100) / 100)
               .toString()
               .replace('.', ',')
+
+            if (text.length > 7) {
+              animateError()
+              return
+            }
+            display.textContent = text
           } else {
+            if (func.toString().length > 7) {
+              animateError()
+              return
+            }
             display.textContent = func
           }
 
@@ -119,7 +136,10 @@ operatorBtns.forEach((btn) => {
 symbolBtns.forEach((btn) => {
   btn.addEventListener('click', () => {
     const currentText = display.textContent
-    if (!updated && currentText.length > 7) return
+    if (!updated && currentText.length > 7) {
+      animateError()
+      return
+    }
 
     const btnValue = btn.textContent.trim()
     if (updated || currentText == 0 || currentText == 'Error!') {

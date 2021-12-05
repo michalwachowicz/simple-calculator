@@ -25,7 +25,24 @@ body {
     width: 100%;
   }
 }
+.container--animate {
+  animation: shake 0.2s ease;
+}
 
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  35% {
+    transform: translateX(-2%);
+  }
+  70% {
+    transform: translateX(2%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 .wrapper {
   display: flex;
   align-items: center;
