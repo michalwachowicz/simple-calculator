@@ -88,37 +88,38 @@ operatorBtns.forEach((btn) => {
   btn.addEventListener('click', () => {
     const attr = btn.getAttribute('data-func')
 
-    if (attr == 'equals' && currentFunction != null) {
-      const func = runFunc(previousNum, getCurrentNum())
-      if (func != null) {
-        if (func % 1 != 0 && func != 'Error!') {
-          display.textContent = (
-            Math.round((func + Number.EPSILON) * 100) / 100
-          )
-            .toString()
-            .replace('.', ',')
-        } else {
-          display.textContent = func
+    if (attr == 'equals') {
+      if (currentFunction != null) {
+        const func = runFunc(previousNum, getCurrentNum())
+        if (func != null) {
+          if (func % 1 != 0 && func != 'Error!') {
+            display.textContent = (
+              Math.round((func + Number.EPSILON) * 100) / 100
+            )
+              .toString()
+              .replace('.', ',')
+          } else {
+            display.textContent = func
+          }
+
+          previousNum = func
         }
-
-        previousNum = func
+        clearOperators()
       }
+    } else {
       clearOperators()
-      return
+      btn.classList.add(activeClass)
+
+      previousNum = getCurrentNum()
+      currentFunction = attr
     }
-
-    clearOperators()
-    btn.classList.add(activeClass)
-
-    previousNum = getCurrentNum()
-    currentFunction = attr
   })
 })
 
 symbolBtns.forEach((btn) => {
   btn.addEventListener('click', () => {
     const currentText = display.textContent
-    if (currentText.length >= 9) return
+    if (!updated && currentText.length > 7) return
 
     const btnValue = btn.textContent.trim()
     if (updated || currentText == 0 || currentText == 'Error!') {
