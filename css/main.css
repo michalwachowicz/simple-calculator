@@ -51,6 +51,41 @@ body {
   width: 100%;
 }
 
+.error-alert {
+  position: absolute;
+  top: 2rem;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  width: 260px;
+  background-color: #ffa8a8;
+  color: #c92a2a;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+  animation: alert 1.5s ease;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+.error-alert__error {
+  font-weight: 600;
+}
+
+@keyframes alert {
+  0% {
+    transform: scale(0);
+  }
+  25% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1);
+  }
+  100% {
+    transform: translateY(-100%) scale(0.01);
+  }
+}
 .display {
   padding: 0.5rem 0.25rem;
   overflow: hidden;

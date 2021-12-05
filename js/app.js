@@ -84,13 +84,31 @@ function addClickAnimation(node) {
   })
 }
 
-function animateError() {
-  const container = document.querySelector('.container')
+function generateError(message) {
+  function generateErrorAlert() {
+    if (document.querySelector('.error-alert')) return
 
-  container.classList.add('container--animate')
-  setTimeout(() => {
-    container.classList.remove('container--animate')
-  }, 200)
+    const alert = document.createElement('div')
+    alert.className = 'error-alert'
+    alert.innerHTML = `<span class="error-alert__error">Error!</span> ${message}`
+
+    document.body.appendChild(alert)
+    setTimeout(() => {
+      document.body.removeChild(alert)
+    }, 1450)
+  }
+
+  function animateError() {
+    const container = document.querySelector('.container')
+
+    container.classList.add('container--animate')
+    setTimeout(() => {
+      container.classList.remove('container--animate')
+    }, 200)
+  }
+
+  generateErrorAlert()
+  animateError()
 }
 
 operatorBtns.forEach((btn) => {
@@ -101,19 +119,22 @@ operatorBtns.forEach((btn) => {
       if (currentFunction != null) {
         const func = runFunc(previousNum, getCurrentNum())
         if (func != null) {
-          if (func % 1 != 0 && func != 'Error!') {
+          if (func == 'Error!') {
+            display.textContent = func
+            generateError('You cannot divide by 0')
+          } else if (func % 1 != 0) {
             const text = (Math.round((func + Number.EPSILON) * 100) / 100)
               .toString()
               .replace('.', ',')
 
             if (text.length > 7) {
-              animateError()
+              generateError('Equation result is too long')
               return
             }
             display.textContent = text
           } else {
             if (func.toString().length > 7) {
-              animateError()
+              generateError('Equation result is too long')
               return
             }
             display.textContent = func
@@ -137,7 +158,7 @@ symbolBtns.forEach((btn) => {
   btn.addEventListener('click', () => {
     const currentText = display.textContent
     if (!updated && currentText.length > 7) {
-      animateError()
+      generateError('The input cannot be longer than 7 numbers')
       return
     }
 
